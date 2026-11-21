@@ -73,14 +73,11 @@ function renderGallery(){
  activePhotos.forEach(photo=>{
    const figure=document.createElement('figure');figure.className='photo-card';
    const button=document.createElement('button');button.type='button';button.className='photo-button';
-   button.setAttribute('aria-label','Открыть фотографию «'+photo.title+'»');
+   button.setAttribute('aria-label','Открыть фотографию: '+photo.alt);
    button.dataset.open=photo.id;
    const img=document.createElement('img');setPhotoSource(img,photo.id);img.alt=photo.alt;img.width=photo.width;img.height=photo.height;img.loading='lazy';img.decoding='async';
    button.append(img);
-   const caption=document.createElement('figcaption');
-   const title=document.createElement('span');title.textContent=photo.title;title.className='photo-title';
-   const series=document.createElement('span');series.textContent=photo.series;
-   caption.append(title,series);figure.append(button,caption);fragment.append(figure);
+   figure.append(button);fragment.append(figure);
  });
  gallery.replaceChildren(fragment);
  document.querySelector('#gallery-status').textContent=labels[currentFilter]+'. Фотографий: '+activePhotos.length+'.';
@@ -89,8 +86,6 @@ function showPhoto(){
  const photo=activePhotos[currentIndex];
  document.querySelector('#image-error').hidden=true;
  image.hidden=false;image.alt=photo.alt;setPhotoSource(image,photo.id);
- document.querySelector('#lightbox-title').textContent=photo.title;
- document.querySelector('#lightbox-category').textContent=photo.series;
  document.querySelector('#lightbox-counter').textContent=(currentIndex+1)+' / '+activePhotos.length;
 }
 function openPhoto(id,trigger){
