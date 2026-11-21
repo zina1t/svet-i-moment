@@ -21,6 +21,21 @@ const photos = [
 {id:'details-2',category:'details',title:'Время берёт своё',series:'Наблюдения',alt:'Старый голубой микроавтобус, оплетённый растениями',width:1365,height:2048},
 {id:'travel-1',category:'travel',title:'Масштаб тишины',series:'Путешествия',alt:'Люди на берегу у подножия гор в лёгкой дымке',width:2048,height:1638}
 ];
+
+const photoFiles={"studio-1":"IMG_6338(1).jpg","studio-2":"IMG_6339(1).jpg","studio-3":"IMG_6365(1).jpg","studio-4":"IMG_6369(1).jpg","studio-5":"IMG_6395(1).jpg","reportage-1":"IMG_6567.jpg","reportage-2":"IMG_6558.jpg","outdoor-1":"IMG_6271.jpg","outdoor-2":"IMG_6276.jpg","outdoor-3":"IMG_6121.jpg","outdoor-4":"IMG_6144.jpg","travel-5":"IMG_2129.jpg","details-1":"IMG_5761(2).jpg","details-2":"IMG_5782(1).jpg","details-3":"IMG_5769(1).jpg","details-4":"IMG_5189.jpg","travel-1":"IMG_3739.jpg","travel-2":"IMG_3717.jpg","travel-3":"IMG_3724.jpg","travel-4":"IMG_3750.jpg"};
+function setPhotoSource(element,id){
+ const original=photoFiles[id];
+ const plain=original.replace(/\(\d+\)(?=\.jpg$)/i,'');
+ const names=[plain,original,plain.replace(/\.jpg$/i,'.JPG'),original.replace(/\.jpg$/i,'.JPG'),id+'.webp'];
+ const candidates=[...new Set(names)].map(name=>'photos/'+encodeURIComponent(name));
+ let index=0;
+ element.onerror=()=>{
+   if(++index<candidates.length){element.src=candidates[index];return;}
+   if(element===image){element.hidden=true;document.querySelector('#image-error').hidden=false;}
+ };
+ element.src=candidates[0];
+}
+
 const labels={all:'Все работы',portrait:'Портреты',reportage:'Репортаж',travel:'Путешествия',details:'Наблюдения'};
 const gallery=document.querySelector('#gallery');
 const dialog=document.querySelector('#lightbox');
@@ -38,7 +53,7 @@ function renderGallery(){
    const button=document.createElement('button');button.type='button';button.className='photo-button';
    button.setAttribute('aria-label','Открыть фотографию «'+photo.title+'»');
    button.dataset.open=photo.id;
-   const img=document.createElement('img');img.src='photos/'+photo.id+'.webp';img.alt=photo.alt;img.width=photo.width;img.height=photo.height;img.loading='lazy';img.decoding='async';
+   const img=document.createElement('img');setPhotoSource(img,photo.id);img.alt=photo.alt;img.width=photo.width;img.height=photo.height;img.loading='lazy';img.decoding='async';
    button.append(img);
    const caption=document.createElement('figcaption');
    const title=document.createElement('span');title.textContent=photo.title;title.className='photo-title';
@@ -51,7 +66,7 @@ function renderGallery(){
 function showPhoto(){
  const photo=activePhotos[currentIndex];
  document.querySelector('#image-error').hidden=true;
- image.hidden=false;image.alt=photo.alt;image.src='photos/'+photo.id+'.webp';
+ image.hidden=false;image.alt=photo.alt;setPhotoSource(image,photo.id);
  document.querySelector('#lightbox-title').textContent=photo.title;
  document.querySelector('#lightbox-category').textContent=photo.series;
  document.querySelector('#lightbox-counter').textContent=(currentIndex+1)+' / '+activePhotos.length;
@@ -78,10 +93,11 @@ dialog.addEventListener('keydown',event=>{
  if(event.key==='ArrowLeft'){event.preventDefault();step(-1);}
  if(event.key==='ArrowRight'){event.preventDefault();step(1);}
 });
-image.addEventListener('error',()=>{image.hidden=true;document.querySelector('#image-error').hidden=false;});
+
 const stage=document.querySelector('#lightbox-stage');
 stage.addEventListener('pointerdown',event=>{startX=event.clientX;});
 stage.addEventListener('pointerup',event=>{if(startX!==null&&Math.abs(event.clientX-startX)>65)step(event.clientX<startX?1:-1);startX=null;});
 stage.addEventListener('pointercancel',()=>{startX=null;});
+document.querySelectorAll('img[data-photo]').forEach(img=>setPhotoSource(img,img.dataset.photo));
 renderGallery();
 
