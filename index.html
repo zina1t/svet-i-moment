@@ -9,6 +9,16 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <script defer src="app.js?v=reportage32"></script>
+<style>
+.header-socials { display: flex; gap: 4px; }
+.header-socials a { display: grid; place-items: center; width: 44px; height: 44px; color: var(--green); border-radius: 50%; }
+.header-socials a:hover { background: #e9ede6; }
+.header-socials svg { width: 22px; height: 22px; }
+@media (max-width: 760px) {
+  .header { flex-wrap: wrap; column-gap: 12px; row-gap: 8px; }
+  .header-socials { margin-left: auto; }
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#works">Перейти к фотографиям</a>
@@ -16,6 +26,10 @@
 <a class="brand" href="#" aria-label="Свет и момент — на главную"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2v36M2 20h36M7.3 7.3l25.4 25.4M7.3 32.7 32.7 7.3" stroke="currentColor" stroke-width="2.6"/></svg><span>свет и момент<span class="brand-small">ФОТОГРАФИЯ</span></span></a>
 <nav aria-label="Основная навигация"><a href="#works">Работы</a><a href="#about">О подходе</a></nav>
 <a class="header-link" href="#works">Смотреть портфолио <span class="tiny-grid" aria-hidden="true">⊞</span></a>
+<div class="header-socials">
+  <a href="https://t.me/zina1t" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.7 3.4 2.8 10.7c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 11-6.9c.5-.3 1-.1.6.2l-8.9 8.1-.3 4.9c.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.7-.8l3.2-15c.3-1.2-.5-2-1.3-1.6Z"/></svg></a>
+  <a href="https://www.instagram.com/v.griaztsov?avpt=MXd1djd1Z21iN3o4MQ%3D%3D&amp;utm_source=qr" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+</div>
 </header>
 <main>
 <section class="hero" aria-labelledby="hero-title">
