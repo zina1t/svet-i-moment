@@ -24,10 +24,17 @@ const photos = [
 {"id":"travel-7","category":"travel","title":"Облачный день","series":"Путешествия","alt":"Облака в мягком дневном свете","width":3190,"height":4785},
 {"id":"details-5","category":"details","title":"Красный акцент","series":"Наблюдения","alt":"Красная банка среди травы рядом с тёмной опорой","width":4000,"height":6000},
 {"id":"details-6","category":"details","title":"Графика ветвей","series":"Наблюдения","alt":"Силуэт дерева и ветвей на фоне пасмурного неба","width":2947,"height":4421}
-,{"id":"travel-8","category":"travel","title":"Взгляд в пути","series":"Путешествия","alt":"Фотография из путешествия","width":3,"height":4}
+,{"id":"travel-8","category":"travel","title":"Взгляд в пути","series":"Путешествия","alt":"Фотография из путешествия","width":3,"height":4},
+{"id":"reportage-3","category":"reportage","series":"Репортаж","alt":"Репортажная фотография с мероприятия"},
+{"id":"reportage-4","category":"reportage","series":"Репортаж","alt":"Репортажная фотография с мероприятия"},
+{"id":"reportage-5","category":"reportage","series":"Репортаж","alt":"Репортажная фотография с мероприятия"},
+{"id":"reportage-6","category":"reportage","series":"Репортаж","alt":"Репортажная фотография с мероприятия"},
+{"id":"reportage-7","category":"reportage","series":"Репортаж","alt":"Репортажная фотография с мероприятия"},
+{"id":"reportage-8","category":"reportage","series":"Репортаж","alt":"Репортажная фотография с мероприятия"},
+{"id":"reportage-9","category":"reportage","series":"Репортаж","alt":"Репортажная фотография с мероприятия"}
 ];
 
-const photoFiles={"travel-8":"IMG_9697.HEIC","studio-1":"15ba773c-e332-46ca-af46-e56ff09ade60.jpg","studio-2":"7e934f2b-0542-4541-a3f8-678bbcd870cf.jpg","studio-3":"aeeecc51-5ab7-4cda-b746-bb72b631d849.jpg","studio-4":"2aa291cc-c0bf-4c44-8e57-316ed279244c.jpg","studio-5":"fcfc142b-eed1-4431-a0bc-fb5826d39c80.jpg","reportage-1":"7cb51737-c4c0-47f9-a857-e4172e43145a.jpg","reportage-2":"a3e88845-12a7-48ec-b6c2-f6e4e76e3b6f.jpg","outdoor-1":"13cd282d-d906-4888-82ea-427b73062479.jpg","outdoor-2":"a0e81ea7-4e9d-42a1-83e0-8c6da7f98172.jpg","outdoor-3":"312d707e-b5a2-4e06-a89a-be90abfe6042.jpg","outdoor-4":"34bbc743-fe3b-450a-8aaa-cabc3e47108e.jpg","travel-5":"948ddd98-8576-4af0-ac92-747473ae0caa.jpg","details-1":"58a0bad6-82b9-40b5-a624-b92c355a76fb.jpg","details-2":"66d742bd-3caf-4fc4-b89d-e1819acb5e93.jpg","details-3":"4246f7ec-7d18-4103-bc31-57d62cb981d5.jpg","details-4":"0d0d3755-aa12-43e9-bef8-5d1cf590ac90.jpg","travel-1":"e52d1ce3-23fb-4f92-bb98-9dc4faceff36.jpg","travel-2":"70506930-a6ff-460e-b957-9536d94bacd6.jpg","travel-3":"ff46e2ef-a7fe-4ddc-a8e3-a97d48a3c2ae.jpg","travel-4":"4bd809b6-501e-478e-b1e6-d587b76a83e3.jpg","travel-6":"IMG_3649.jpg","travel-7":"IMG_3946.jpg","details-5":"IMG_4325.jpg","details-6":"IMG_4424.jpg"};
+const photoFiles={"travel-8":"IMG_9697.HEIC","studio-1":"15ba773c-e332-46ca-af46-e56ff09ade60.jpg","studio-2":"7e934f2b-0542-4541-a3f8-678bbcd870cf.jpg","studio-3":"aeeecc51-5ab7-4cda-b746-bb72b631d849.jpg","studio-4":"2aa291cc-c0bf-4c44-8e57-316ed279244c.jpg","studio-5":"fcfc142b-eed1-4431-a0bc-fb5826d39c80.jpg","reportage-1":"7cb51737-c4c0-47f9-a857-e4172e43145a.jpg","reportage-2":"a3e88845-12a7-48ec-b6c2-f6e4e76e3b6f.jpg","outdoor-1":"13cd282d-d906-4888-82ea-427b73062479.jpg","outdoor-2":"a0e81ea7-4e9d-42a1-83e0-8c6da7f98172.jpg","outdoor-3":"312d707e-b5a2-4e06-a89a-be90abfe6042.jpg","outdoor-4":"34bbc743-fe3b-450a-8aaa-cabc3e47108e.jpg","travel-5":"948ddd98-8576-4af0-ac92-747473ae0caa.jpg","details-1":"58a0bad6-82b9-40b5-a624-b92c355a76fb.jpg","details-2":"66d742bd-3caf-4fc4-b89d-e1819acb5e93.jpg","details-3":"4246f7ec-7d18-4103-bc31-57d62cb981d5.jpg","details-4":"0d0d3755-aa12-43e9-bef8-5d1cf590ac90.jpg","travel-1":"e52d1ce3-23fb-4f92-bb98-9dc4faceff36.jpg","travel-2":"70506930-a6ff-460e-b957-9536d94bacd6.jpg","travel-3":"ff46e2ef-a7fe-4ddc-a8e3-a97d48a3c2ae.jpg","travel-4":"4bd809b6-501e-478e-b1e6-d587b76a83e3.jpg","travel-6":"IMG_3649.jpg","travel-7":"IMG_3946.jpg","details-5":"IMG_4325.jpg","details-6":"IMG_4424.jpg","reportage-3":"IMG_6460.jpg","reportage-4":"IMG_6524.jpg","reportage-5":"IMG_6542.jpg","reportage-6":"IMG_6543.jpg","reportage-7":"IMG_6563.jpg","reportage-8":"IMG_6647.jpg","reportage-9":"IMG_6919.jpg"};
 
 let heicLibrary;
 const convertedPhotos=new Map();
@@ -75,7 +82,7 @@ function renderGallery(){
    const button=document.createElement('button');button.type='button';button.className='photo-button';
    button.setAttribute('aria-label','Открыть фотографию: '+photo.alt);
    button.dataset.open=photo.id;
-   const img=document.createElement('img');setPhotoSource(img,photo.id);img.alt=photo.alt;img.width=photo.width;img.height=photo.height;img.loading='lazy';img.decoding='async';
+   const img=document.createElement('img');setPhotoSource(img,photo.id);img.alt=photo.alt;if(photo.width&&photo.height){img.width=photo.width;img.height=photo.height;}img.loading='lazy';img.decoding='async';
    button.append(img);
    figure.append(button);fragment.append(figure);
  });
@@ -116,5 +123,6 @@ stage.addEventListener('pointerdown',event=>{startX=event.clientX;});
 stage.addEventListener('pointerup',event=>{if(startX!==null&&Math.abs(event.clientX-startX)>65)step(event.clientX<startX?1:-1);startX=null;});
 stage.addEventListener('pointercancel',()=>{startX=null;});
 document.querySelectorAll('img[data-photo]').forEach(img=>setPhotoSource(img,img.dataset.photo));
+document.querySelector('[data-filter="all"] span').textContent=photos.length;
 renderGallery();
 
